@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EtiquetaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('etiquetas');
 });
+
+
+Route::get('/import', [EtiquetaController::class,"index"]);
+Route::post('/import', [EtiquetaController::class,"import"]);
+Route::get('/export', [EtiquetaController::class,"export"]);
+Route::get('/exportar-pdf', [EtiquetaController::class, 'generarPDF'])->name('exportar-pdf');
+Route::get('/pruebaVista', [EtiquetaController::class, 'pruebaVista'])->name('pruebaVista');
