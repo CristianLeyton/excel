@@ -23,12 +23,15 @@
             Instrucciones: <br>
             • Genere el archivo "Etiquetas" desde el sistema Winfarma<br>
             • Guarde el archivo con la extension .xlsx<br>
-            • Importe el archivo y de click en "Cargar Excel"<br>
+            • Importe el archivo en esta página y de click en "Cargar Excel"<br>
             • Luego podrá exportar el pdf que se genera, con las etiquetas <br>
+            <br>
+            • Si quiere generar su archivo excel manualmente, le dejo un ejemplo: 
+            <a class="btn btn-primary" style="transform: scale(0.7)" href="{{ url('/Ejemplo.xlsx') }}">Descargar ejemplo <i class='bx bxs-file-blank'></i> </a>
         </p>
 
         <hr>
-        <h5>Carcar archivo Excel:</h5>
+        <h5>Importar archivo Excel:</h5>
         <form action="{{ url('/import') }}" method="post" enctype="multipart/form-data">
             @csrf
             <input type="file" name="file" id="file-input" accept=".xlsx" onchange="habilitarBoton()">

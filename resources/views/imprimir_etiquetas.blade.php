@@ -25,7 +25,7 @@
     @foreach ($etiquetas as $producto)
     <div class="card text-center" style="height: 3cm; width: 5.5cm; display: inline-block; margin-bottom: 4px;">
         <div class="card-body d-flex flex-column justify-content-between p-1">
-          <h3 class="card-title mb-0">${{ $producto->precio}}</h3>
+          <h3 class="card-title mb-0">${{ round($producto->precio,2)}}</h3>
           <p class="">{{ Str::limit($producto->producto, 100) }}</p>
         </div>
             {{-- <span class="text-muted">{{ $producto->laboratorio }}</span>
